@@ -4,8 +4,11 @@ import Image from "next/image"
 import logo from "../assets/images/logo.jpg"
 import MobileMenu from "./MobileMenu"
 import { HiMenuAlt1 } from 'react-icons/hi'
+import { useState } from "react"
 
 const Header = () => {
+
+  const [open, setOpen] = useState(false)
 
   return (
     <header className={`font-extrabold text-gray-600`}>
@@ -15,9 +18,9 @@ const Header = () => {
           <span className="ml-3 text-xl">Suditya Kumar</span>
         </Link>
 
-        <HiMenuAlt1 onClick={() => setOpen(!open)} className="bg-white invisible text-2xl md:hidden cursor-pointer " />
+        <HiMenuAlt1 onClick={() => setOpen(!open)} className="bg-white text-2xl md:hidden cursor-pointer " />
 
-        <MobileMenu />
+        <MobileMenu  data={[open, setOpen]}/>
         {/* Desktop navigation */}
         <nav className={`hidden font-medium md:ml-auto md:mr-auto flex-wrap items-center text-base justify-center md:flex`}>
           <Link href={"/portfolio"} className="hover:scale-[0.9] transition-all mr-5 hover:text-gray-900">Portfolio</Link>
