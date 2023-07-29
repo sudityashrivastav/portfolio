@@ -3,7 +3,7 @@ import Model from "./ModelWrapper"
 const HeroSection = ({ profileInfo }) => {
   const { heading, name, tag, discription, button, resume } = profileInfo
   return (
-    <div className={`rotate-z-90 w-full h-[60vh] flex justify-around items-center md:flex-row bg-transparent ${tag ? "flex-col-reverse" : "flex-col"}`}>
+    <div className={`rotate-z-90 mb-14 md:mb-0 w-full h-[60vh] flex justify-around items-center md:flex-row bg-transparent ${tag ? "flex-col-reverse" : "flex-col"}`}>
       {!tag && <Model data={{ scale: 0.95, path: "./green_tara_mantra/scene.gltf", speed: 4 }} />}
 
       <div className='flex flex-col gap-4 items-start justify-start w-full  p-5 min-h-[200px]'>
